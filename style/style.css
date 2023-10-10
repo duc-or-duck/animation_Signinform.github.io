@@ -1,0 +1,310 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: rgb(32, 39, 63);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.SignIn {
+  width: 320px;
+  height: 480px;
+  background: #12c2e9;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.SignIn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f64f59;
+  transition: all 0.5s linear;
+  top: -50%;
+  left: -50%;
+  animation: animate 6s linear infinite;
+  transform-origin: bottom right;
+}
+.SignIn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f64f59;
+  transition: all 0.5s linear;
+  top: -50%;
+  left: -50%;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+  transform-origin: bottom right;
+}
+.SignIn form {
+  inset: 5px;
+  position: absolute;
+  z-index: 2;
+  background: #12c2e9;
+  border-radius: 8px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+}
+.SignIn__cap {
+  font-size: 30px;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(to right, #0d0fbd, #c471ed, #f64f59);
+  -webkit-background-clip: text;
+  margin-bottom: 10px;
+}
+.SignIn__input {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+.SignIn__input input {
+  position: relative;
+  padding: 20px 10px 20px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+.SignIn__input-span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}
+.SignIn__input input:focus ~ .SignIn__input-span,
+.SignIn__input input:valid ~ .SignIn__input-span {
+  transform: translate(0px, -40px);
+  font-size: 15px;
+  color: #f64f59;
+}
+.SignIn__input i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 4px;
+  transform: translateY(-20%);
+}
+.SignIn__link {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.SignIn__link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.SignIn__link a:first-child {
+  position: relative;
+}
+.SignIn__link a:first-child::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #99f2c8;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  box-shadow: 0px 0px 20px 4px #99f2c8;
+  opacity: 0;
+}
+.SignIn__link a:first-child:hover::before {
+  opacity: 1;
+  transition: all 0.15s linear;
+}
+.SignIn__link a:nth-child(2) {
+  color: blue;
+}
+.SignIn__button {
+  align-items: left;
+  margin-top: 60px;
+}
+.SignIn__button button {
+  width: 6rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #99f2c8;
+  box-shadow: 0 4px 5px 0 black;
+  transition: all 0.15s linear;
+  cursor: pointer;
+}
+.SignIn__button button:hover {
+  box-shadow: 0 2px 0 0 black;
+}
+
+.SignIn__input input:focus ~ i,
+.SignIn__input input:valid ~ i {
+  transition: 0.5s;
+  height: 44px;
+  background: white;
+}
+
+/*# sourceMappingURL=style.css.map */
